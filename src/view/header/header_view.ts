@@ -1,4 +1,4 @@
-import {accountButtonParams, accountSVGParams, containerParams, headerActionsParams, headerParams, innerCircleParams, langButtonParams, langSVGParams, langTextParams, linkHomeParams, linkMoviesParams, linkMyListParams, linkPeopleParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchSVGParams} from './header_params.ts';
+import {accountButtonParams, accountContainerParams, accountSVGParams, containerParams, globeContainerParams, headerActionsParams, headerParams, innerCircleParams, langButtonParams, langTextParams, linkHomeParams, linkMoviesParams, linkMyListParams, linkPeopleParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
 import {Creator} from '../creator.ts';
 export class Header_View {
     constructor () {
@@ -31,16 +31,18 @@ export class Header_View {
         const headerActions = new Creator(headerActionsParams).getElement();
 
         const searchButton = new Creator(searchButtonParams).getElement();
-        const searchSVG = new Creator(searchSVGParams).getElement();
+        const searchSVG = new Creator(searchContainerParams).getElement();
         searchButton.append(searchSVG);
 
         const langButton = new Creator(langButtonParams).getElement();
-        const langSVG = new Creator(langSVGParams).getElement();
+        // const langSVG = new Creator(langSVGParams).getElement();
         const langText = new Creator(langTextParams).getElement();
-        langButton.append(langSVG, langText);
+        const globeContainer = new Creator(globeContainerParams).getElement();
+        langButton.append(globeContainer, langText);
+        // langButton.append(langSVG, langText);
 
         const accountButton = new Creator(accountButtonParams).getElement();
-        const accountSVG = new Creator(accountSVGParams).getElement();
+        const accountSVG = new Creator(accountContainerParams).getElement();
         accountButton.append(accountSVG);
 
         headerActions.append(searchButton, langButton, accountButton);
@@ -53,5 +55,6 @@ export class Header_View {
         const container = new Creator(containerParams).getElement();
         container.append(this.buildLogo(), this.buildNavBar(), this.buildHeaderActions());
         this.header.append(container);
+        console.log(this.header);
     }
 }

@@ -1,0 +1,91 @@
+/* Header Container */
+.container {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.outer {
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1.5px solid #a78bfa;
+    border-radius: 100%;
+    position: relative;
+}
+
+.inner {
+    width: 9px;
+    height: 9px;
+    border: 1.5px solid #a78bfa;
+    border-radius: 100%;
+}
+
+.inner::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #a78bfa;
+    border-radius: 50%;
+    top: -2px;
+    right: 2px;
+    box-shadow: -18px 17px 0 rgba(167, 139, 250, .65);
+}
+
+/* Navigation Bar */
+.navBar {
+    display:flex;
+    gap: 5px;
+}
+
+/* Button */
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Language button */
+
+.langButton {
+    display: flex;
+    gap: 5px;
+}
+
+/* svg Containers */
+.svgContainer {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.globe {
+    background-image: url(/globe-svgrepo-com.svg);
+}
+
+.account {
+    background-image: url(/profile-1341-svgrepo-com.svg);
+}
+
+.search {
+    background-image: url(/search-svgrepo-com.svg);
+}
+
+.actions {
+    display: flex;
+    gap: 5px;
+}

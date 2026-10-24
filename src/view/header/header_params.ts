@@ -1,3 +1,5 @@
+import styles from './header.module.css'
+
 export const headerParams = {
     class: "",
     tagName: "header",
@@ -5,7 +7,7 @@ export const headerParams = {
 }
 
 export const containerParams = {
-    class: "",
+    class: [styles.container],
     tagName: "div",
     attributes: {},
 }
@@ -13,117 +15,141 @@ export const containerParams = {
 // Logo
 
 export const logoParams = {
-    class: "";
-    tagName: "div";
-    attributes: {};
+    class: [styles.logo, styles.button],
+    tagName: "button",
+    attributes: {},
 }
 
 export const outerCircleParams = {
-    class: "";
-    tagName: "span";
-    attributes: {};
+    class: [styles.outer],
+    tagName: "span",
+    attributes: {},
 }
 
 export const innerCircleParams = {
-    class: "";
-    tagName: "span";
-    attributes: {};
+    class: [styles.inner],
+    tagName: "span",
+    attributes: {},
 }
 
 export const logoTextParams = {
-    class: "";
-    tagName: "span";
-    attributes: {};
-    text: "CINESCOPE";
+    class: "",
+    tagName: "span",
+    attributes: {},
+    text: "CINESCOPE",
 }
 
 // Navigation bar
 
 export const navBarParams = {
-    class: "";
-    tagName: "nav";
-    attributes: {};
+    class: [styles.navBar],
+    tagName: "nav",
+    attributes: {},
 }
 
 export const linkHomeParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
-    text: "Home";
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
+    text: "Home",
 }
 
 export const linkMoviesParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
-    text: "Movies";
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
+    text: "Movies",
 }
 
 export const linkPeopleParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
-    text: "People";
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
+    text: "People",
 }
 
 export const linkMyListParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
-    text: "MyList";
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
+    text: "MyList",
 }
 
 // Header Actions
 
 export const headerActionsParams = {
-    class: "";
-    tagName: "div";
-    attributes: {};
+    class: [styles.actions],
+    tagName: "div",
+    attributes: {},
 }
 
 export const searchButtonParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
 }
 
 export const searchSVGParams = {
-    class: "";
-    tagName: "svg";
-    attributes: {};
-    html: '<use href="sprite.svg#icon-search"></use>';  
+    class: [styles.svg],
+    tagName: "svg",
+    attributes: {},
+    html: '<use href="../../assets/sprite.svg#icon-search"></use>', 
 }
 
 export const langButtonParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
+    class: [styles.button, styles.langButton],
+    tagName: "button",
+    attributes: {},
 }
 
-export const langSVGParams = {
-    class: "";
-    tagName: "svg";
-    attributes: {};
-    html: '<use href="sprite.svg#icon-language">'
+export const globeContainerParams = {
+    class: [styles.svgContainer, styles.globe],
+    tagName: "span",
+    attributes: {},
 }
+
+export const accountContainerParams = {
+    class: [styles.svgContainer, styles.account],
+    tagName: "span",
+    attributes: {},
+}
+
+export const searchContainerParams = {
+    class: [styles.svgContainer, styles.search],
+    tagName: "span",
+    attributes: {},
+}
+
+
+// export const langSVGParams = {
+//     class: [styles.svg],
+//     tagName: "svg",
+//     attributes: {},
+//     html: '<use href="/sprite.svg#icon-language">',
+// }
 
 export const langTextParams = {
-    class: "";
-    tagName: "span";
-    attributes: {};
-    text: "EN";
+    class: "",
+    tagName: "span",
+    attributes: {},
+    text: "EN",
 }
 
 export const accountButtonParams = {
-    class: "";
-    tagName: "button";
-    attributes: {};
+    class: [styles.button],
+    tagName: "button",
+    attributes: {},
 }
 
 export const accountSVGParams = {
-    class: "";
-    tagName: "svg";
-    attributes: {};
-    html: '<use href="sprite.svg#icon-account">';
+    class: [styles.svg],
+    tagName: "svg",
+    attributes: {"viewBox": "0 0 24 24", "fill": "none", "stroke": "black",
+        "stroke-width":"1.8",
+        "stroke-linecap":"round",
+        "stroke-linejoin":"round"},
+    html: `<circle cx="11" cy="11" r="7"/>
+    <path d="m20 20-4-4"/>`
+    // html: '<use href="sprite.svg#icon-account">',
 }
 

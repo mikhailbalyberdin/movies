@@ -1,5 +1,5 @@
 export class Creator {
-  element = null;
+  element: HTMLElement;
   constructor(elemParams) {
     this.params = elemParams;
     this.createTag();
@@ -45,7 +45,7 @@ export class Creator {
     }
   }
 
-  getElement() {
+  getElement(): HTMLElement {
     return this.element;
   }
 }
