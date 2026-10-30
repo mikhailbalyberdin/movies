@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 
 export const headerParams = {
-    class: "",
+    class: [styles.header],
     tagName: "header",
     attributes: {},
 }
@@ -47,33 +47,15 @@ export const navBarParams = {
     attributes: {},
 }
 
-export const linkHomeParams = {
+
+export const anchorParams = {
     class: [styles.button],
     tagName: "button",
     attributes: {},
-    text: "Home",
+    text: "",
 }
 
-export const linkMoviesParams = {
-    class: [styles.button],
-    tagName: "button",
-    attributes: {},
-    text: "Movies",
-}
 
-export const linkPeopleParams = {
-    class: [styles.button],
-    tagName: "button",
-    attributes: {},
-    text: "People",
-}
-
-export const linkMyListParams = {
-    class: [styles.button],
-    tagName: "button",
-    attributes: {},
-    text: "MyList",
-}
 
 // Header Actions
 

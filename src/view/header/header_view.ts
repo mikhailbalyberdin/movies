@@ -1,4 +1,4 @@
-import {accountButtonParams, accountContainerParams, accountSVGParams, containerParams, globeContainerParams, headerActionsParams, headerParams, innerCircleParams, langButtonParams, langTextParams, linkHomeParams, linkMoviesParams, linkMyListParams, linkPeopleParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
+import {accountButtonParams, accountContainerParams, accountSVGParams, anchorParams, containerParams, globeContainerParams, headerActionsParams, headerParams, innerCircleParams, langButtonParams, langTextParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
 import {Creator} from '../creator.ts';
 export class Header_View {
     constructor () {
@@ -17,12 +17,18 @@ export class Header_View {
     }
 
     buildNavBar() {
+        const anchorArray = ["Home", "Movies", "People", "My List"]
         const navBar = new Creator(navBarParams).getElement();
-        const homeLink = new Creator(linkHomeParams).getElement();
-        const moviesLink = new Creator(linkMoviesParams).getElement();
-        const peopleLink = new Creator(linkPeopleParams).getElement();
-        const myListLink = new Creator(linkMyListParams).getElement();
-        navBar.append(homeLink, moviesLink, peopleLink, myListLink);
+        // const homeLink = new Creator(linkHomeParams).getElement();
+        // const moviesLink = new Creator(linkMoviesParams).getElement();
+        // const peopleLink = new Creator(linkPeopleParams).getElement();
+        // const myListLink = new Creator(linkMyListParams).getElement();
+        // navBar.append(homeLink, moviesLink, peopleLink, myListLink);
+        anchorArray.forEach(element => {
+        anchorParams.text = element;
+            const anchorElement = new Creator(anchorParams).getElement()
+            navBar.append(anchorElement)
+        });
 
         return navBar;
     }

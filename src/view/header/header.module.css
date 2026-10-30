@@ -1,6 +1,10 @@
+/* Header */
+.header {
+}
+
 /* Header Container */
 .container {
-    padding: 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -60,7 +64,8 @@
 
 .langButton {
     display: flex;
-    gap: 5px;
+    align-items: center;
+    gap: 7px;
 }
 
 /* svg Containers */
