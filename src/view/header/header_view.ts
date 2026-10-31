@@ -1,4 +1,4 @@
-import {accountButtonParams, accountContainerParams, accountSVGParams, anchorParams, containerParams, globeContainerParams, headerActionsParams, headerParams, innerCircleParams, langButtonParams, langTextParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
+import {accountButtonParams, accountContainerParams, accountHoverParams, accountSVGParams, anchorParams, containerParams, globeContainerParams, headerActionsParams, headerParams, hoverElementParams, innerCircleParams, langButtonParams, langTextParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
 import {Creator} from '../creator.ts';
 export class Header_View {
     constructor () {
@@ -25,9 +25,9 @@ export class Header_View {
         // const myListLink = new Creator(linkMyListParams).getElement();
         // navBar.append(homeLink, moviesLink, peopleLink, myListLink);
         anchorArray.forEach(element => {
-        anchorParams.text = element;
             const anchorElement = new Creator(anchorParams).getElement()
-            navBar.append(anchorElement)
+            anchorElement.innerText = element;
+            navBar.append(anchorElement);
         });
 
         return navBar;
@@ -38,20 +38,27 @@ export class Header_View {
 
         const searchButton = new Creator(searchButtonParams).getElement();
         const searchSVG = new Creator(searchContainerParams).getElement();
+        const searchHover = new Creator(hoverElementParams).getElement()
         searchButton.append(searchSVG);
+        searchHover.append(searchButton);
 
         const langButton = new Creator(langButtonParams).getElement();
         // const langSVG = new Creator(langSVGParams).getElement();
         const langText = new Creator(langTextParams).getElement();
         const globeContainer = new Creator(globeContainerParams).getElement();
+        const langHover = new Creator(hoverElementParams).getElement();
         langButton.append(globeContainer, langText);
+        langHover.append(langButton);
+        
         // langButton.append(langSVG, langText);
 
         const accountButton = new Creator(accountButtonParams).getElement();
         const accountSVG = new Creator(accountContainerParams).getElement();
+        const accountHover = new Creator(accountHoverParams).getElement();
         accountButton.append(accountSVG);
+        accountHover.append(accountButton);
 
-        headerActions.append(searchButton, langButton, accountButton);
+        headerActions.append(searchHover, langHover, accountHover);
 
         return headerActions;
     }

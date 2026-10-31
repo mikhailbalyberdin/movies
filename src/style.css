@@ -35,7 +35,6 @@
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
-    --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
@@ -43,6 +42,17 @@
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  --border: #2b3240;
+  --border-hover: #565f72;
+  --border-accent: #a78bfa;
+  --border-purple: #49405e;
+
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-header: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --border-medium: rgba(255, 255, 255, 0.17);
+  --border-strong: rgba(255, 255, 255, 0.25);
+  --border-accent-subtle: rgba(167, 139, 250, 0.13);
   }
 
   #social .button-icon {
@@ -157,9 +167,9 @@ code {
 }
 
 #app {
-  width: 1126px;
+  /* width: 1126px; */
   max-width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   text-align: center;
   border-inline: 1px solid var(--border);
   min-height: 100svh;

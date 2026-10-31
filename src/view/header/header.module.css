@@ -1,10 +1,15 @@
 /* Header */
 .header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: #0B0D12;
+    border: 1.5px, solid, var(--border);
 }
 
 /* Header Container */
 .container {
-    padding: 20px;
+    padding: 40px;
     display: flex;
     justify-content: space-around;
     align-items: baseline;
@@ -60,12 +65,16 @@
     cursor: pointer;
 }
 
+.text {
+    color: white;
+}
+
 /* Language button */
 
 .langButton {
     display: flex;
     align-items: center;
-    gap: 7px;
+    gap: 15px;
 }
 
 /* svg Containers */
@@ -77,6 +86,7 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 .globe {
     background-image: url(/globe-svgrepo-com.svg);
@@ -92,5 +102,31 @@
 
 .actions {
     display: flex;
-    gap: 5px;
+    gap: 30px;
+}
+
+.hover {
+    padding: 10px;
+    border: 1.5px solid transparent;
+    border-radius: 100px;
+}
+
+:hover.hover {
+    padding: 10px;
+    background-color: #B9A4FF;
+    border: 1.5px, solid, red;
+    border-radius: 100px;
+}
+
+.accountHover {
+    padding: 10px;
+    border: 1.5px, solid, rgba(167, 139, 250, .65);
+    border-radius: 100px;
+}
+
+:hover.accountHover {
+        padding: 10px;
+    background-color: #B9A4FF;
+    border: 1.5px, solid, red;
+    border-radius: 100px;
 }

@@ -49,7 +49,7 @@ export const navBarParams = {
 
 
 export const anchorParams = {
-    class: [styles.button],
+    class: [styles.button, styles.text],
     tagName: "button",
     attributes: {},
     text: "",
@@ -73,9 +73,8 @@ export const searchButtonParams = {
 
 export const searchSVGParams = {
     class: [styles.svg],
-    tagName: "svg",
+    tagName: "div",
     attributes: {},
-    html: '<use href="../../assets/sprite.svg#icon-search"></use>', 
 }
 
 export const langButtonParams = {
@@ -111,7 +110,7 @@ export const searchContainerParams = {
 // }
 
 export const langTextParams = {
-    class: "",
+    class: [styles.text],
     tagName: "span",
     attributes: {},
     text: "EN",
@@ -135,3 +134,14 @@ export const accountSVGParams = {
     // html: '<use href="sprite.svg#icon-account">',
 }
 
+export const hoverElementParams = {
+    class: [styles.hover],
+    tagName: "span",
+    attributes: {},
+}
+
+export const accountHoverParams = {
+    class: [styles.accountHover],
+    tagName: "span",
+    attributes: {},
+}
