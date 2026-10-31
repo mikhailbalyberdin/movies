@@ -36,7 +36,20 @@ export const logoTextParams = {
     class: "",
     tagName: "span",
     attributes: {},
-    text: "CINESCOPE",
+}
+
+export const textNormalParams = {
+    class: [styles.normal],
+    tagName: "span",
+    attributes: {},
+    text: "CINE",
+}
+
+export const textStrongParams = {
+    class: [styles.strong],
+    tagName: "span",
+    attributes: {},
+    text: "SCOPE",
 }
 
 // Navigation bar

@@ -52,6 +52,16 @@
     box-shadow: -18px 17px 0 rgba(167, 139, 250, .65);
 }
 
+.strong {
+    color: #A78BFA;
+    font-size: large;
+}
+
+.normal {
+    color: white;
+    font-size: large;
+}
+
 /* Navigation Bar */
 .navBar {
     display:flex;
@@ -112,21 +122,17 @@
 }
 
 :hover.hover {
-    padding: 10px;
     background-color: #B9A4FF;
-    border: 1.5px, solid, red;
-    border-radius: 100px;
+    border-color: red;
 }
 
 .accountHover {
     padding: 10px;
-    border: 1.5px, solid, rgba(167, 139, 250, .65);
+    border: 1.5px solid rgba(167, 139, 250, .65);
     border-radius: 100px;
 }
 
 :hover.accountHover {
-        padding: 10px;
     background-color: #B9A4FF;
-    border: 1.5px, solid, red;
-    border-radius: 100px;
+    border-color: red;
 }

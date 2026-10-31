@@ -1,4 +1,4 @@
-import {accountButtonParams, accountContainerParams, accountHoverParams, accountSVGParams, anchorParams, containerParams, globeContainerParams, headerActionsParams, headerParams, hoverElementParams, innerCircleParams, langButtonParams, langTextParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, } from './header_params.ts';
+import {accountButtonParams, accountContainerParams, accountHoverParams, accountSVGParams, anchorParams, containerParams, globeContainerParams, headerActionsParams, headerParams, hoverElementParams, innerCircleParams, langButtonParams, langTextParams, logoParams, logoTextParams, navBarParams, outerCircleParams, searchButtonParams, searchContainerParams, searchSVGParams, textNormalParams, textStrongParams, } from './header_params.ts';
 import {Creator} from '../creator.ts';
 export class Header_View {
     constructor () {
@@ -10,6 +10,9 @@ export class Header_View {
         const outerCircle = new Creator(outerCircleParams).getElement();
         const innerCircle = new Creator(innerCircleParams).getElement();
         const logoText = new Creator(logoTextParams).getElement();
+        const normalText = new Creator(textNormalParams).getElement();
+        const strongText = new Creator(textStrongParams).getElement();
+        logoText.append(normalText, strongText);
         outerCircle.append(innerCircle);
         logo.append(outerCircle, logoText);
 
@@ -17,16 +20,14 @@ export class Header_View {
     }
 
     buildNavBar() {
-        const anchorArray = ["Home", "Movies", "People", "My List"]
+        const anchorArray = ["Home", "Movies", "People", "My List"];
         const navBar = new Creator(navBarParams).getElement();
-        // const homeLink = new Creator(linkHomeParams).getElement();
-        // const moviesLink = new Creator(linkMoviesParams).getElement();
-        // const peopleLink = new Creator(linkPeopleParams).getElement();
-        // const myListLink = new Creator(linkMyListParams).getElement();
-        // navBar.append(homeLink, moviesLink, peopleLink, myListLink);
         anchorArray.forEach(element => {
-            const anchorElement = new Creator(anchorParams).getElement()
-            anchorElement.innerText = element;
+            const currentAnchorParams = {
+                ...anchorParams,
+                text: element,
+            };
+            const anchorElement = new Creator(currentAnchorParams).getElement()
             navBar.append(anchorElement);
         });
 
