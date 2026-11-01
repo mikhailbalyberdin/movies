@@ -38,9 +38,9 @@ export class Creator {
   }
 
   setAttr() {
-    if (this.params.attr) {
-      for (let key in this.params.attr) {
-        this.element.setAttribute(key, this.params.attr[key]);
+    if (this.params.attributes) {
+      for (let key in this.params.attributes) {
+        this.element.setAttribute(key, this.params.attributes[key]);
       }
     }
   }

@@ -20,14 +20,19 @@ export class Header_View {
     }
 
     buildNavBar() {
-        const anchorArray = ["Home", "Movies", "People", "My List"];
+        const anchorArray = ["Home", "Movies", "People", "MyList"];
         const navBar = new Creator(navBarParams).getElement();
         anchorArray.forEach(element => {
             const currentAnchorParams = {
                 ...anchorParams,
+                attributes: {
+                    ...anchorParams.attributes,
+                    "data-anchor-link": element,
+                },
                 text: element,
             };
             const anchorElement = new Creator(currentAnchorParams).getElement()
+            console.log(currentAnchorParams);
             navBar.append(anchorElement);
         });
 
@@ -65,10 +70,9 @@ export class Header_View {
     }
 
     buildHeader() {
-        this.header = new Creator(headerParams).getElement();
+        this.headerElement = new Creator(headerParams).getElement();
         const container = new Creator(containerParams).getElement();
         container.append(this.buildLogo(), this.buildNavBar(), this.buildHeaderActions());
-        this.header.append(container);
-        console.log(this.header);
+        this.headerElement.append(container);
     }
 }
