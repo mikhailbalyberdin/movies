@@ -10,7 +10,11 @@ export class View {
         this.app.append(this.header.headerElement, this.main.mainElement);
     }
 
-    buildMoviesPage() {
-        this.main.buildMovies();
+    buildMoviesPage(genres) {
+        this.main.buildMovies(genres); 
+    }
+
+    clearMain() {
+        this.main.clear();
     }
 }

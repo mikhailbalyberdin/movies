@@ -1,3 +1,5 @@
+import styles from "./movies.module.css";
+
 // Title
 
 export const moviesParams = {
@@ -40,5 +42,21 @@ export const searchParams = {
     tagName: "input",
     attributes: { type: "text", name: "search", placeholder: "Search titles" },
 }
+
+// Genres - array of buttons
+
+export const genreContainerParams = {
+    class: [styles.genreContainer],
+    tagName: "div",
+    attributes: {},
+}
+
+export const genreButtonParams = {
+    class: [styles.genre],
+    tagName: "button",
+    attributes: {},
+}
+
+
 
 

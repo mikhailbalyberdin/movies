@@ -1,4 +1,4 @@
-// // Callbacks
+// Callbacks
 // function loadscript(src, callback) {
 //     let script = document.createElement('script');
 //     script.src = src;
@@ -15,30 +15,30 @@
 //     }
 // })
 
-// // Promises
+// Promises
 
-// // let promise = new Promise(function(resolve, reject) {
-// //     setTimeout(() => resolve("done"), 1000)
-// // })
+// let promise = new Promise(function(resolve, reject) {
+//     setTimeout(() => resolve("done"), 1000)
+// })
 
-// // promise.then(
-// //     function(result) {
-// //         alert(result);
-// //         let promise2 = new Promise(function(resolve, reject) {
-// //             setTimeout(() => reject(new Error("Whoops")), 1000);
-// //         })
-// //         promise2.then(null, (error) => {alert(error)
-// //             let promise3 = new Promise(function(resolve, reject) {
-// //             setTimeout(() => reject(new Error("Ahhh")), 1000)
-// //         })
-// //         promise.finally(() => {alert("Готов к труду и обороне!")})
-// //         promise3.catch((error) => alert("Несмотря на отклонённый промис!"));
-// //         })
-// //     },
-// //     function(error) {
-// //         alert(error);
-// //     }
-// // )
+// promise.then(
+//     function(result) {
+//         alert(result);
+//         let promise2 = new Promise(function(resolve, reject) {
+//             setTimeout(() => reject(new Error("Whoops")), 1000);
+//         })
+//         promise2.then(null, (error) => {alert(error)
+//             let promise3 = new Promise(function(resolve, reject) {
+//             setTimeout(() => reject(new Error("Ahhh")), 1000)
+//         })
+//         promise.finally(() => {alert("Готов к труду и обороне!")})
+//         promise3.catch((error) => alert("Несмотря на отклонённый промис!"));
+//         })
+//     },
+//     function(error) {
+//         alert(error);
+//     }
+// )
 
 // function loadScriptAgain(src) {
 //     return new Promise(function(resolve, reject) {
@@ -58,7 +58,7 @@
 //     null
 // )
 
-// // Async/await
+// Async/await
 
 // async function f() {
 //     return "Hi";

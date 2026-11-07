@@ -1,5 +1,7 @@
 export class Model {
     constructor() {
-        this.token = import.meta.env.VITE_TOKEN
+        this.token = import.meta.env.VITE_TOKEN;
     }
+
+    // create method for genre requests
 }

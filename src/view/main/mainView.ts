@@ -6,10 +6,13 @@ export class MainView {
     constructor() {
         this.mainElement = new Creator(mainParams).getElement();
         this.movies = new Movies();
-
     }
 
-    buildMovies() {
-        this.mainElement.append(this.movies.moviesElement);
+    buildMovies(genres) {
+        this.mainElement.append(this.movies.build(genres));
+    }
+
+    clear() {
+        this.movies.selfRemove();
     }
 }
