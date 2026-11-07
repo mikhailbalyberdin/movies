@@ -16,8 +16,7 @@ export class Controller {
                 if (isAnchorLink) {
                     const anchorData = isElement.dataset.anchorLink;
                     if (anchorData === "Movies") {
-                        // call genre request method from model 
-                        // give genres for buildMoviesPage(...) to make
+                        await this.model.getGenre();
                         this.view.clearMain();
                         this.view.buildMoviesPage(["adventure", "criminal", "drama"]);
                     }

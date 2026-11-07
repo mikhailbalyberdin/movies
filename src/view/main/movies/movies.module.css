@@ -8,6 +8,10 @@
 }
 
 .genre {
-    padding: 10px;
+    padding: 15px;
     border-radius: 100px;
+    cursor: pointer;
+    background-color: #0B0D12;
+    color: white;
+    border: solid 2px gray;
 }
