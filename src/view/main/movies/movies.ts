@@ -35,9 +35,9 @@ export class Movies{
                 ...genreButtonParams,
                 attributes: {
                     ...genreButtonParams.attributes,
-                    "data-genre": genre,
+                    "data-genre": genre.id,
                 },
-                text: genre,
+                text: genre.name,
             }
             const genreElement = new Creator(currentGenreParams).getElement();
             genreContainer.append(genreElement);

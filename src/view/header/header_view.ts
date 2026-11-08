@@ -32,7 +32,6 @@ export class Header_View {
                 text: element,
             };
             const anchorElement = new Creator(currentAnchorParams).getElement()
-            console.log(currentAnchorParams);
             navBar.append(anchorElement);
         });
 

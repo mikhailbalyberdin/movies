@@ -2,6 +2,8 @@ import { Model } from "../model/model";
 import { View } from "../view/view";
 
 export class Controller {
+    model
+    view
     constructor() {
         this.model = new Model();
         this.view = new View();
@@ -18,8 +20,12 @@ export class Controller {
                     if (anchorData === "Movies") {
                         await this.model.getGenre();
                         this.view.clearMain();
-                        this.view.buildMoviesPage(["adventure", "criminal", "drama"]);
+                        this.view.buildMoviesPage(this.model.genreList);
                     }
+                }
+                const isGenreButton = isElement.getAttribute("data-genre");
+                if(isGenreButton) {
+                    this.model.getByGenreId(isGenreButton);
                 }
             }
         })
