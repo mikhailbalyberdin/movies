@@ -11,11 +11,19 @@ export class MainView {
         this.movies = new Movies();
     }
 
+    showMovies(results:[]) {
+        this.mainElement.append(this.movies.buildMovies(results));
+    }
+
     buildMovies(genres: genreObj[]) {
         this.mainElement.append(this.movies.build(genres));
     }
 
     clear() {
         this.movies.selfRemove();
+    }
+
+    deleteMovies() {
+        this.movies.clear();
     }
 }

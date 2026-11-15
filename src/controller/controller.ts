@@ -25,7 +25,9 @@ export class Controller {
                 }
                 const isGenreButton = isElement.getAttribute("data-genre");
                 if(isGenreButton) {
-                    this.model.getByGenreId(isGenreButton);
+                    this.view.clearMovieList();
+                    this.view.buildMovieCards(await this.model.getByGenreId(isGenreButton));
+                    console.log(this.view.main.mainElement);
                 }
             }
         })

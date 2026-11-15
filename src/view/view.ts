@@ -19,7 +19,15 @@ export class View {
         this.main.buildMovies(genres); 
     }
 
+    buildMovieCards(results:[]) {
+        this.main.showMovies(results);
+    }
+
     clearMain() {
         this.main.clear();
+    }
+
+    clearMovieList() {
+        this.main.deleteMovies();
     }
 }

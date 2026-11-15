@@ -34,6 +34,8 @@ export class Model {
 
     const movieData =  await (await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}`, options)).json();
     // this.movieList = await movieData.genres;
+    const movieList = movieData.results;
     console.log(movieData);
+    return movieList;
     }
 }

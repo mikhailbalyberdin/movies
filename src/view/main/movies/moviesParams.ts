@@ -57,6 +57,50 @@ export const genreButtonParams = {
     attributes: {},
 }
 
+// Cards of movies - ul
+
+export const movieListParams = {
+    class: [styles.movieList],
+    tagName: "ul",
+    attributes: {},
+}
+
+export const movieCardParams = {
+    class: [styles.movieCard],
+    tagName: "article",
+    attributes: {},
+}
+
+export const imageContainerParams = {
+    class: [styles.imageContainer],
+    tagName: "img",
+    attributes: {},
+}
+
+export const realImageParams = {
+    class: [styles.realImage],
+    tagName: "img",
+    attributes: {},
+}
+
+export const movieTitleParams = {
+    class: [styles.cardTitle],
+    tagName: "span",
+    attributes: {},
+    text: "",
+}
+
+export const realImageContainerParams = {
+    class: [styles.realImageContainer],
+    tagName: "div",
+    attributes: {},
+}
+
+
+
+
+
+
 
 
 

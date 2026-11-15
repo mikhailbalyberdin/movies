@@ -16,3 +16,64 @@
     color: white;
     border: solid 2px gray;
 }
+
+/* List of movies */
+.movieList {
+    padding: 5px;
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(4, 350px);
+    gap: 20px;
+}
+
+.movieCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    /* width: 250px; */
+    /* height: 350px; */
+    
+}
+
+.movieCard::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: oklch(100% 0.00011 271.152 / 0);
+    backdrop-filter: blur(15px);
+}
+
+.imageContainer {
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.realImage {
+    object-fit: cover;
+    width: 100%;
+    
+}
+
+.cardTitle {
+    display: none;
+}
+
+.realImageContainer {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    height: 70%;
+    width: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+}

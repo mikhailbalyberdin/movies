@@ -1,10 +1,14 @@
-import { actionTextParams, genreButtonParams, genreContainerParams, moviesParams, searchParams, subTitleParams, titleContainerParams, titleParams } from "./moviesParams";
+import { actionTextParams, genreButtonParams, genreContainerParams, imageContainerParams, movieCardParams, movieListParams, moviesParams, movieTitleParams, realImageContainerParams, realImageParams, searchParams, subTitleParams, titleContainerParams, titleParams } from "./moviesParams";
 import { Creator } from "../../creator";
+
 
 export class Movies{
     moviesElement: HTMLElement|null
+    movieList: HTMLElement|null
     constructor() {
         this.moviesElement = null;
+        this.movieList = null;
+        
     }
 
     build(genres) {
@@ -44,6 +48,40 @@ export class Movies{
         }
 
         return genreContainer;
+    }
+
+    buildMovies(results) {
+        this. movieList = new Creator(movieListParams).getElement();
+        results.forEach(element => {
+            const card = new Creator(movieCardParams).getElement();
+            
+            movieTitleParams.text = element.title;
+            const cardTitle = new Creator(movieTitleParams).getElement();
+
+            const currentImageContainerParams = {
+                ...imageContainerParams,
+                attributes: {src: `https://image.tmdb.org/t/p/w500/${element.poster_path}`}
+            }
+
+            const imageContainer = new Creator(currentImageContainerParams).getElement();
+
+        
+            const currentRealImageParams = {
+                ...realImageParams,
+                attributes: {src: `https://image.tmdb.org/t/p/w500/${element.poster_path}`},
+            }
+            const realIamge = new Creator(currentRealImageParams).getElement();
+            const realImageContainer = new Creator(realImageContainerParams).getElement();
+            realImageContainer.append(realIamge);
+
+            card.append(imageContainer, realImageContainer, cardTitle);
+            this.movieList?.append(card);
+        });
+        return this.movieList;
+    }
+
+    clear() {
+        this.movieList?.remove();
     }
 
     selfRemove() {
