@@ -79,13 +79,13 @@ export const imageContainerParams = {
 
 export const realImageParams = {
     class: [styles.realImage],
-    tagName: "img",
+    tagName: "div",
     attributes: {},
 }
 
 export const movieTitleParams = {
     class: [styles.cardTitle],
-    tagName: "span",
+    tagName: "h2",
     attributes: {},
     text: "",
 }
@@ -94,6 +94,26 @@ export const realImageContainerParams = {
     class: [styles.realImageContainer],
     tagName: "div",
     attributes: {},
+}
+
+export const titleRateContainerParams = {
+    class: [styles.titleRate],
+    tagName: "div",
+}
+
+export const rateContainerParams = {
+    class: [],
+    tagName: "div",
+}
+
+export const rateParams = {
+    class: [],
+    tagName: "h3",
+}
+
+export const starParams = {
+    class: [],
+    tagName: "div",
 }
 
 

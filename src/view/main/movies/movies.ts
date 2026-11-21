@@ -1,4 +1,4 @@
-import { actionTextParams, genreButtonParams, genreContainerParams, imageContainerParams, movieCardParams, movieListParams, moviesParams, movieTitleParams, realImageContainerParams, realImageParams, searchParams, subTitleParams, titleContainerParams, titleParams } from "./moviesParams";
+import { actionTextParams, genreButtonParams, genreContainerParams, imageContainerParams, movieCardParams, movieListParams, moviesParams, movieTitleParams, rateContainerParams, rateParams, realImageContainerParams, realImageParams, searchParams, starParams, subTitleParams, titleContainerParams, titleParams, titleRateContainerParams } from "./moviesParams";
 import { Creator } from "../../creator";
 
 
@@ -55,8 +55,18 @@ export class Movies{
         results.forEach(element => {
             const card = new Creator(movieCardParams).getElement();
             
+            const titleRateContainer = new Creator(titleRateContainerParams).getElement();
+            const rateContainer = new Creator(rateContainerParams).getElement();
+            const currentRateParams = {
+                ...rateParams,
+                text: element.vote_average,
+            }
+            const rate = new Creator(currentRateParams).getElement();
+            const star = new Creator(starParams).getElement();
             movieTitleParams.text = element.title;
             const cardTitle = new Creator(movieTitleParams).getElement();
+            rateContainer.append(rate, star);
+            titleRateContainer.append(cardTitle, rateContainer);
 
             const currentImageContainerParams = {
                 ...imageContainerParams,
@@ -68,13 +78,14 @@ export class Movies{
         
             const currentRealImageParams = {
                 ...realImageParams,
-                attributes: {src: `https://image.tmdb.org/t/p/w500/${element.poster_path}`},
+                // attributes: {src: `https://image.tmdb.org/t/p/w500/${element.poster_path}`},
             }
-            const realIamge = new Creator(currentRealImageParams).getElement();
+            const realImage = new Creator(currentRealImageParams).getElement();
+            realImage.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500/${element.poster_path})`;
             const realImageContainer = new Creator(realImageContainerParams).getElement();
-            realImageContainer.append(realIamge);
+            realImageContainer.append(realImage);
 
-            card.append(imageContainer, realImageContainer, cardTitle);
+            card.append(imageContainer, realImageContainer, titleRateContainer);
             this.movieList?.append(card);
         });
         return this.movieList;
