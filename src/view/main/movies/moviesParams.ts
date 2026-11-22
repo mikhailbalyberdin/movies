@@ -37,10 +37,22 @@ export const subTitleParams = {
 
 // Input - search titles
 
+export const formParams = {
+    class: [],
+    tagName: "form",
+    attributes: {},
+} 
+
 export const searchParams = {
     class: [],
     tagName: "input",
     attributes: { type: "text", name: "search", placeholder: "Search titles" },
+}
+
+export const submitButtonParams = {
+    class: [],
+    tagName: "input",
+    attributes: {type: "submit"},
 }
 
 // Genres - array of buttons

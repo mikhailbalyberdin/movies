@@ -1,14 +1,15 @@
-import { actionTextParams, genreButtonParams, genreContainerParams, imageContainerParams, movieCardParams, movieListParams, moviesParams, movieTitleParams, rateContainerParams, rateParams, realImageContainerParams, realImageParams, searchParams, starParams, subTitleParams, titleContainerParams, titleParams, titleRateContainerParams } from "./moviesParams";
+import { actionTextParams, formParams, genreButtonParams, genreContainerParams, imageContainerParams, movieCardParams, movieListParams, moviesParams, movieTitleParams, rateContainerParams, rateParams, realImageContainerParams, realImageParams, searchParams, starParams, submitButtonParams, subTitleParams, titleContainerParams, titleParams, titleRateContainerParams } from "./moviesParams";
 import { Creator } from "../../creator";
 
 
 export class Movies{
     moviesElement: HTMLElement|null
     movieList: HTMLElement|null
+    form: HTMLElement|null
     constructor() {
         this.moviesElement = null;
         this.movieList = null;
-        
+        this.form = null;
     }
 
     build(genres) {
@@ -27,8 +28,12 @@ export class Movies{
 }
 
     buildSearch() {
+        this.form = new Creator(formParams).getElement();
         const searchTitle = new Creator(searchParams).getElement();
-        return searchTitle;
+        const submitButton = new Creator(submitButtonParams).getElement();
+
+        this.form.append(searchTitle, submitButton);
+        return this.form;
     }
 
     buildGenres(genres) {

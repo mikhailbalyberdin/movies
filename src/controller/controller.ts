@@ -21,6 +21,10 @@ export class Controller {
                         await this.model.getGenre();
                         this.view.clearMain();
                         this.view.buildMoviesPage(this.model.genreList);
+                        this.view.main.movies.form?.addEventListener("submit", async(event) => {
+                            event.preventDefault();
+                            console.log(event.target);
+                        })
                     }
                 }
                 const isGenreButton = isElement.getAttribute("data-genre");
