@@ -102,17 +102,17 @@ export const titleRateContainerParams = {
 }
 
 export const rateContainerParams = {
-    class: [],
+    class: [styles.rateStar],
     tagName: "div",
 }
 
 export const rateParams = {
-    class: [],
+    class: [styles.rate],
     tagName: "h3",
 }
 
 export const starParams = {
-    class: [],
+    class: [styles.star],
     tagName: "div",
 }
 

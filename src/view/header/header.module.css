@@ -2,7 +2,7 @@
 .header {
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: #0B0D12;
     border: 1.5px, solid, var(--border);
 }

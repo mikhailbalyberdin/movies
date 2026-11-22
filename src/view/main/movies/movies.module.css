@@ -25,7 +25,6 @@
     grid-template-rows: repeat(4, 450px);
     gap: 20px;
 }
-
 .movieCard {
     position: relative;
     overflow: hidden;
@@ -33,15 +32,6 @@
     cursor: pointer;
 }
 
-.movieCard:hover {
-    .realImage {
-        transform: scale(1.2);
-    }
-
-    .imageContainer {
-        transform: scale(0.8);
-    }
-}
 
 .movieCard::before {
     content: "";
@@ -76,6 +66,8 @@
 
 .cardTitle {
     z-index: 1;
+    margin: 0;
+    padding: 2.5px;
     font-size: 20px;
     font-weight: 800;
     color: white;
@@ -95,7 +87,71 @@
 .titleRate {
     position: absolute;
     z-index: 2;
-    bottom: 10px;
-    left: 10px;
-
+    bottom: 15px;
+    left: 5px;
 }
+
+.rate {
+    margin: 0;
+    padding: 2.5px;
+    color: white;
+}
+
+.star {
+    background-image: url(/public/star-svgrepo-com.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px; 
+}
+
+.rateStar {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+    @media(max-width: 1024px) {
+        .movieList {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-rows: repeat(4, 300px);
+        }
+    
+        .cardTitle {
+            padding: 0;
+            font-size: 15px;
+        }
+        
+        .rate {
+            padding: 0px;
+            font-size: 15px;
+        }
+    }
+    
+    @media(max-width: 690px) {
+    .movieList {
+            grid-template-columns: repeat(3, minmax(100px, 1fr));
+            grid-template-rows: repeat(4, 300px);
+        }
+    }
+    
+    @media(max-width: 500px) {
+    .movieList {
+            grid-template-columns: repeat(1, minmax(100px, 0.8fr));
+            grid-template-rows: repeat(4, 450px);
+            justify-content: center;
+        }
+    }
+    
+    
+    @media((hover: hover) and (pointer:fine)) {
+        .movieCard:hover {
+            .realImage {
+                transform: scale(1.2);
+            }
+        
+            .imageContainer {
+                transform: scale(0.8);
+            }
+        }
+    }
