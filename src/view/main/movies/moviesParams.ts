@@ -40,7 +40,7 @@ export const subTitleParams = {
 export const formParams = {
     class: [],
     tagName: "form",
-    attributes: {},
+    attributes: {"data-search-form": ""},
 } 
 
 export const searchParams = {
@@ -52,7 +52,7 @@ export const searchParams = {
 export const submitButtonParams = {
     class: [],
     tagName: "input",
-    attributes: {type: "submit"},
+    attributes: {type: "submit", "data-search-submit": ""},
 }
 
 // Genres - array of buttons

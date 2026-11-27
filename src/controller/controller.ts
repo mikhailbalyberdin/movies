@@ -23,7 +23,10 @@ export class Controller {
                         this.view.buildMoviesPage(this.model.genreList);
                         this.view.main.movies.form?.addEventListener("submit", async(event) => {
                             event.preventDefault();
-                            console.log(event.target);
+                            const searchForm = this.view.main.movies.form;
+                            this.view.clearMain();
+                            this.view.buildMovieCards(await this.model.getByForm(searchForm));
+                            
                         })
                     }
                 }
@@ -34,6 +37,12 @@ export class Controller {
                     console.log(this.view.main.mainElement);
                 }
             }
+        })
+    }
+
+    formListener(form) {
+        form.addEventListener("submit", async (event)=> {
+            this.model.getByForm(form);
         })
     }
 }
